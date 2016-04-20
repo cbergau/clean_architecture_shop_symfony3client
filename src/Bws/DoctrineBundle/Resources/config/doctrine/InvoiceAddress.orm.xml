@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Bws\DoctrineBundle\Entity\InvoiceAddress" table="invoice_address" repository-class="InvoiceAddressRepository">
+    <indexes>
+      <index name="IDX_FF9759529395C3F3" columns="customer_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="firstName" type="string" column="first_name" length="45" nullable="false"/>
+    <field name="lastName" type="string" column="last_name" length="45" nullable="false"/>
+    <field name="street" type="string" column="street" length="45" nullable="false"/>
+    <field name="zip" type="string" column="zip" length="45" nullable="false"/>
+    <field name="city" type="string" column="city" length="45" nullable="false"/>
+    <many-to-one field="customer" target-entity="Customer">
+      <join-columns>
+        <join-column name="customer_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,97 @@
+body {
+  padding-top: 80px; }
+
+.no-margin {
+  margin: 0; }
+
+.back-to-shop-btn {
+  margin-top: 15px; }
+
+h2.article-title > a {
+  font-size: 20px; }
+
+.price {
+  color: #b12704;
+  font-weight: bold; }
+
+.search-articles-result {
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 5px;
+  padding: 5px;
+  position: absolute;
+  width: 800px; }
+
+.article-found {
+  border-bottom: 1px dotted #ccc;
+  padding: 5px; }
+
+.article-found a * {
+  color: black; }
+
+.article-found a strong {
+  color: #428bca; }
+
+.article-found:hover {
+  background-color: #ffffcc; }
+
+.article-found:last-child {
+  border-bottom: 0; }
+
+.list_articles_image {
+  width: 150px; }
+
+.table-list-basket tr:last-child {
+  border-bottom: 1px solid #444; }
+
+.table-list-basket tr:last-child td,
+.table-list-basket tr:last-child td:hover {
+  background-color: #eee !important; }
+
+.list_basket_title {
+  font-weight: bold; }
+
+.list_basket_quantity {
+  text-align: center;
+  width: 70px; }
+
+.list_basket_price {
+  color: #b12704;
+  text-align: right;
+  width: 90px; }
+
+.list_basket_total {
+  text-align: right;
+  width: 90px; }
+
+.list_basket_total_order_sum_label {
+  font-size: 110%;
+  font-weight: bold;
+  text-align: right; }
+
+.list_basket_total_order_sum {
+  color: #b12704;
+  font-size: 110%;
+  font-weight: bold;
+  text-align: right; }
+
+.registered_basket_details {
+  margin-top: 10px; }
+
+div.deliveryaddress {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0; }
+
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer; }
+
+.logisticpartner {
+  margin-bottom: 20px !important; }
+
+.login-form-small {
+  padding: 5px;
+  padding-bottom: inherit; }
+
+.login-form-small .form-group {
+  margin-bottom: 5px;
+}

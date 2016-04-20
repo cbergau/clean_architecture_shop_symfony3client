@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-5">
+            {{ include('BwsShopWebBundle:RegisteredCustomer:invoiceaddress.html.twig') }}
+        </div>
+        <div class="col-md-5">
+            {{ include('BwsShopWebBundle:RegisteredCustomer:deliveryaddress.html.twig') }}
+        </div>
+    </div>
+
+    <form method="post" action="{{ path('bws_shop_web_submit_order_registered') }}">
+
+        <div class="row">
+            <div class="col-md-5">
+                {{ include('BwsShopWebBundle:RegisteredCustomer:logisticpartner.html.twig') }}
+            </div>
+            <div class="col-md-5">
+                {{ include('BwsShopWebBundle:RegisteredCustomer:paymentmethods.html.twig') }}
+            </div>
+        </div>
+
+        <div class="row registered_basket_details">
+            {{ include('BwsShopWebBundle:Basket:basket_details.html.twig') }}
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary pull-right">Submit Order</button>
+        </div>
+
+    </form>
+
+    {{ include('BwsShopWebBundle:RegisteredCustomer:invoiceaddress_modal.html.twig') }}
+    {{ include('BwsShopWebBundle:RegisteredCustomer:deliveryaddress_add_modal.html.twig') }}
+    {{ include('BwsShopWebBundle:RegisteredCustomer:deliveryaddress_modal.html.twig') }}
+{% endblock %}

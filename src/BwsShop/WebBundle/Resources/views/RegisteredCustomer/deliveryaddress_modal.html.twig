@@ -1,0 +1,29 @@
+{% verbatim %}
+<script type="text/ng-template" id="deliveryAddressBook.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Delivery Addresses</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row deliveryaddress" ng-repeat="deliveryaddress in deliveryaddresses">
+            <div class="col-md-8">
+                {{ deliveryaddress.first_name }} {{ deliveryaddress.last_name }}<br/>
+                {{ deliveryaddress.street }}<br/>
+                {{ deliveryaddress.zip }} {{ deliveryaddress.city }}
+            </div>
+            <div class="col-md-4">
+                <div class="pull-right">
+                    <a ng-click="selectDeliveryAddress(deliveryaddress)" class="btn btn-default">Choose</a>
+                    <a ng-click="editDeliveryAddress(deliveryaddress)" class="btn btn-default"><span
+                                class="glyphicon glyphicon-pencil"></span></a>
+                    <a ng-click="deleteDeliveryAddress(deliveryaddress)" class="btn btn-default"><span
+                                class="glyphicon glyphicon-trash"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+{% endverbatim %}

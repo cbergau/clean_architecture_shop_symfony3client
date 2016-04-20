@@ -1,0 +1,45 @@
+.table-list-basket tr:last-child {
+  border-bottom: 1px solid #444;
+}
+
+.table-list-basket tr:last-child td,
+.table-list-basket tr:last-child td:hover {
+  background-color: #eee !important;
+}
+
+.list_basket_title {
+  font-weight: bold;
+}
+
+.list_basket_quantity {
+  text-align: center;
+  width: 70px;
+}
+
+.list_basket_price {
+  color: $priceColor;
+  text-align: right;
+  width: 90px;
+}
+
+.list_basket_total {
+  text-align: right;
+  width: 90px;
+}
+
+.list_basket_total_order_sum_label {
+  font-size: $orderSumFontSize;
+  font-weight: bold;
+  text-align: right;
+}
+
+.list_basket_total_order_sum {
+  color: $priceColor;
+  font-size: $orderSumFontSize;
+  font-weight: bold;
+  text-align: right;
+}
+
+.registered_basket_details {
+  margin-top: 10px;
+}

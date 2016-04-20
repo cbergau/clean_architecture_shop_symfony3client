@@ -1,0 +1,104 @@
+bws_shop_web_homepage:
+    path:  /
+    defaults: { _controller: BwsShopWebBundle:Article:index }
+    methods:  [GET]
+
+bws_shop_view_article:
+    path:  /article/{id}
+    defaults: { _controller: BwsShopWebBundle:Article:view }
+    methods:  [GET]
+
+bws_shop_web_search:
+    path:  /search.{_format}
+    defaults: { _controller: BwsShopWebBundle:Article:search, _format: html }
+    methods:  [GET]
+
+bws_shop_web_add_to_basket:
+    path: /basket/add/
+    defaults: { _controller: BwsShopWebBundle:Basket:add }
+    methods:  [POST]
+
+bws_shop_web_list_basket:
+    path: /basket.{_format}
+    defaults: { _controller: BwsShopWebBundle:Basket:list, _format: html }
+    methods:  [GET]
+
+bws_shop_web_change_basket_position:
+    path: /basket/change.{_format}
+    defaults: { _controller: BwsShopWebBundle:Basket:change, _format: json }
+    methods:  [POST]
+
+bws_shop_web_authentication:
+    path: /checkout/authentication
+    defaults: { _controller: BwsShopWebBundle:Authentication:index }
+    methods:  [POST,GET]
+
+bws_shop_web_api_authentication:
+    path: /authentication/login.{_format}
+    defaults: { _controller: BwsShopWebBundle:Authentication:login, _format: json }
+    methods:  [POST]
+
+bws_shop_web_myaccount:
+    path: /myaccount
+    defaults: { _controller: BwsShopWebBundle:MyAccount:index, _format: html }
+    methods:  [GET]
+
+bws_shop_web_orders:
+    path: /myorders
+    defaults: { _controller: BwsShopWebBundle:Order:list, _format: html }
+    methods:  [GET]
+
+bws_shop_web_logout:
+    path: /logout
+    defaults: { _controller: BwsShopWebBundle:Authentication:logout }
+    methods:  [GET]
+
+bws_shop_web_registering:
+    path: /checkout/registering
+    defaults: { _controller: BwsShopWebBundle:UnregisteredCustomer:registering }
+    methods:  [GET]
+
+bws_shop_web_invoiceaddress_change:
+    path: /invoiceaddress/change.{_format}
+    defaults: { _controller: BwsShopWebBundle:InvoiceAddress:change, _format: json }
+    methods:  [POST]
+
+bws_shop_web_deliveryaddress_add:
+    path: /deliveryaddress/add.{_format}
+    defaults: { _controller: BwsShopWebBundle:DeliveryAddress:add, _format: json }
+    methods:  [POST]
+
+bws_shop_web_deliveryaddress_list:
+    path: /deliveryaddress/list.{_format}
+    defaults: { _controller: BwsShopWebBundle:DeliveryAddress:list, _format: json }
+    methods:  [GET]
+
+bws_shop_web_deliveryaddress_select:
+    path: /deliveryaddress/select.{_format}
+    defaults: { _controller: BwsShopWebBundle:DeliveryAddress:select, _format: json }
+    methods:  [POST]
+
+bws_shop_web_unregistered:
+    path: /checkout/unregistered
+    defaults: { _controller: BwsShopWebBundle:UnregisteredCustomer:index }
+    methods:  [GET]
+
+bws_shop_web_registered:
+    path: /checkout/registered
+    defaults: { _controller: BwsShopWebBundle:RegisteredCustomer:registered }
+    methods:  [GET]
+
+bws_shop_web_submit_order_registered:
+    path: /checkout/order/submit
+    defaults: { _controller: BwsShopWebBundle:Order:submitRegistered }
+    methods:  [POST]
+
+bws_shop_web_submit_order:
+    path: /checkout/order/submit_unregistered
+    defaults: { _controller: BwsShopWebBundle:Order:submitUnregistered }
+    methods:  [POST]
+
+bws_shop_web_thanks:
+    path: /checkout/thanks
+    defaults: { _controller: BwsShopWebBundle:Order:thanks }
+    methods:  [GET]

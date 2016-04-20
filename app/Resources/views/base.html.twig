@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="shopApp">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{ app.request.baseUrl }}/">
+    <title>{% block title %}Clean Arch Shop{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('js/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('js/vendor/bootstrap/dist/css/bootstrap-theme.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body ng-controller="ShopCtrl">
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url('bws_shop_web_homepage') }}">CleanArchShop</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('bws_shop_web_homepage') }}">Shop</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="{{ url('bws_shop_web_search') }}">
+                <div class="form-group">
+                    <input type="text" ng-model="by" ng-change="searchArticles()" name="by" class="form-control"
+                           placeholder="Search">
+                    {% verbatim %}
+                    <div class="search-articles-result" ng-show="articles.length > 0">
+                        <div ng-repeat="article in articles" class="row article-found no-margin">
+                            <a href="shop/article/{{ article.id }}">
+                                <div class="col-md-1">
+                                    <img ng-src="{{ article.imagePath }}" style="width: 50px;"/>
+                                </div>
+                                <div class="col-md-10">
+                                    <strong ng-bind="article.title"></strong>
+                                    <span class="price">
+                                        <span ng-bind="article.price"></span> €
+                                    </span>
+                                    <p ng-bind="article.description | limitTo : 250"></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endverbatim %}
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                {% if app.session.get('display') is defined and app.session.get('display') is not null %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.session.get('display') }} <span
+                                    class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('bws_shop_web_myaccount') }}"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ url('bws_shop_web_logout') }}"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Login
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <form class="form login-form-small" ng-submit="login(email, password)">
+                                    <p ng-bind="loginErrorMessages"></p>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="email">Email address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email" ng-model="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="{{ url('bws_shop_web_list_basket') }}">
+                        <span ng-bind="basket.positions.length"></span> Items - <span ng-bind="basket.total"></span> €
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="{{ asset('js/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/angular/angular.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
+    <script src="{{ asset('js/shop/controllers.js') }}"></script>
+{% endblock %}
+</body>
+</html>

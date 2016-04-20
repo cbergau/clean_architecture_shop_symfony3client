@@ -1,0 +1,56 @@
+{% verbatim %}
+<script type="text/ng-template" id="newDeliveryAddressForm.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Add Delivery Addresses</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" role="form" name="newDeliveryAddressForm">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="inputLastName" class="col-sm-3 control-label">First Name:</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="address.first_name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputLastName" class="col-sm-3 control-label">Last Name:</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="address.last_name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputStreet" class="col-sm-3 control-label">Street:</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="address.street">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputZip" class="col-sm-3 control-label">Zip:</label>
+
+                    <div class="col-sm-3">
+                        <input class="form-control" ng-model="address.zip">
+                    </div>
+
+                    <label for="inputZip" class="col-sm-1 control-label">City:</label>
+
+                    <div class="col-sm-5">
+                        <input class="form-control" ng-model="address.city">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+                <button type="submit" class="btn btn-primary" ng-click="saveDeliveryAddress()">Save changes
+                </button>
+            </div>
+        </form>
+    </div>
+</script>
+{% endverbatim %}

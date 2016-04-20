@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    You must have at least 1 article in your cart in order to checkout.
+
+    <p class="back-to-shop-btn"><a href="{{ path('bws_shop_web_homepage') }}" class="btn btn-default">Back to Shop</a></p>
+
+{% endblock %}

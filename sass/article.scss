@@ -1,0 +1,38 @@
+h2.article-title > a {
+  font-size: 20px;
+}
+
+.price {
+  color: $priceColor;
+  font-weight: bold;
+}
+
+.search-articles-result {
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 5px;
+  padding: 5px;
+  position: absolute;
+  width: 800px;
+}
+
+.article-found {
+  border-bottom: 1px dotted #ccc;
+  padding: 5px;
+}
+
+.article-found a * {
+  color: black;
+}
+
+.article-found a strong {
+  color: #428bca;
+}
+
+.article-found:hover {
+  background-color: #ffffcc;
+}
+
+.article-found:last-child {
+  border-bottom: 0;
+}

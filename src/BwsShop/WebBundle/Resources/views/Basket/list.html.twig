@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    {{ include('BwsShopWebBundle:Basket:basket_details.html.twig') }}
+
+    <a class="pull-right btn btn-primary" href="{{ url('bws_shop_web_authentication') }}">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Checkout
+    </a>
+{% endblock %}

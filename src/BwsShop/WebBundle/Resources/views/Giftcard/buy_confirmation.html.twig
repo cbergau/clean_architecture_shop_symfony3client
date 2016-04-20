@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h1>Buy a Giftcard</h1>
+
+    <p>You've bought the Giftcard <br />
+        <strong>Code: </strong>{{ giftcard.code }}<br />
+        <strong>E-Mail: </strong>{{ giftcard.email }}<br />
+        <strong>Amount: </strong>{{ giftcard.amount }}<br />
+    </p>
+
+{% endblock %}

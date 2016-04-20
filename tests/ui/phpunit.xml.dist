@@ -1,0 +1,10 @@
+<phpunit bootstrap="bootstrap.php">
+    <testsuite>
+        <directory>./tests</directory>
+    </testsuite>
+    <php>
+        <env name="HUB_URL" value="http://localhost:4444/wd/hub" />
+        <env name="BROWSER" value="chrome" />
+        <env name="BASE_URL" value="http://localhost/clean_arch_shop/web/app_dev.php" />
+    </php>
+</phpunit>

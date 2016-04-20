@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>Payment Method</strong></div>
+    <div class="panel-body">
+
+        {% for paymentMethod in paymentMethods %}
+            <div class="radio">
+                <label>
+                    <input type="radio"
+                           name="paymentMethodId"
+                           value="{{ paymentMethod.id }}">
+                    {{ paymentMethod.name }}
+                </label>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h3>My Orders</h3>
+
+    {% for order in orders %}
+        <div class="panel panel-default">
+            <div class="panel-heading">Order Numer: {{ order.number }}
+                <span class="pull-right list_basket_total_order_sum">{{ order.totalValue }}</span>
+            </div>
+            <div class="panel-body">
+                <h5>Invoice Address</h5>
+                {% set invoiceAddress = order.invoiceAddress %}
+                {{ invoiceAddress.firstName }} {{ invoiceAddress.lastName }}<br />
+                {{ invoiceAddress.street }}<br />
+                {{ invoiceAddress.zip }} {{ invoiceAddress.city }}<br />
+                <h5>Delivery Address</h5>
+                {% set deliveryAddress = order.invoiceAddress %}
+                {{ deliveryAddress.firstName }} {{ deliveryAddress.lastName }}<br />
+                {{ deliveryAddress.street }}<br />
+                {{ deliveryAddress.zip }} {{ deliveryAddress.city }}<br />
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

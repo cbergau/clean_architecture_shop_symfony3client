@@ -1,0 +1,174 @@
+parameters:
+    interactor.add_to_basket.class: Bws\Interactor\AddToBasket
+    interactor.add_delivery_address.class: Bws\Interactor\AddDeliveryAddress
+    interactor.view_basket.class: Bws\Interactor\ViewBasket
+    interactor.change_basket.class: Bws\Interactor\ChangeBasket
+    interactor.change_invoice_address.class: Bws\Interactor\ChangeInvoiceAddress
+    interactor.show_orders.class: Bws\Interactor\ShowOrders\ShowOrdersInteractor
+    interactor.submit_order_unregistered.class: Bws\Interactor\SubmitOrder
+    interactor.present_article.class: Bws\Interactor\PresentArticle
+    interactor.present_articles.class: Bws\Interactor\PresentArticles
+    interactor.present_paymentmethods.class: Bws\Interactor\PresentPaymentMethods
+    interactor.present_logisticpartners.class: Bws\Interactor\PresentLogisticPartners
+    interactor.search_articles.class: Bws\Interactor\SearchArticles
+    interactor.login.class: Bws\Interactor\Login
+    interactor.present_last_used_address.class: Bws\Interactor\PresentLastUsedAddress
+    interactor.present_current_address.class: Bws\Interactor\PresentCurrentAddress
+    interactor.delivery_address_selectable.class: Bws\Interactor\DeliveryAddressSelectable
+
+services:
+    article.repository:
+        class: %article.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %article.entity.class%
+
+    basket.repository:
+        class: %basket.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %basket.entity.class%
+
+    basket.position.repository:
+        class: %basket.position.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %basket.position.entity.class%
+
+    customer.repository:
+        class: %customer.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %customer.entity.class%
+
+    email.repository:
+        class: %email.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %email.entity.class%
+
+    invoiceaddress.repository:
+        class: %invoiceaddress.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %invoiceaddress.entity.class%
+
+    deliveryaddress.repository:
+        class: %deliveryaddress.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %deliveryaddress.entity.class%
+
+    logisticpartner.repository:
+        class: %logisticpartner.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %logisticpartner.entity.class%
+
+    order.repository:
+        class: %order.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %order.entity.class%
+
+    paymentmethod.repository:
+        class: %paymentmethod.repository.class%
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - %paymentmethod.entity.class%
+
+    interactor.add_to_basket:
+        class: %interactor.add_to_basket.class%
+        arguments:
+            - "@article.repository"
+            - "@basket.position.repository"
+            - "@basket.repository"
+
+    interactor.add_delivery_address:
+        class: %interactor.add_delivery_address.class%
+        arguments:
+            - "@customer.repository"
+            - "@deliveryaddress.repository"
+
+    interactor.view_basket:
+        class: %interactor.view_basket.class%
+        arguments:
+            - "@basket.repository"
+            - "@basket.position.repository"
+
+    interactor.change_basket:
+        class: %interactor.change_basket.class%
+        arguments:
+            - "@basket.position.repository"
+            - "@basket.repository"
+
+    interactor.change_invoice_address:
+        class: %interactor.change_invoice_address.class%
+        arguments:
+            - "@customer.repository"
+            - "@invoiceaddress.repository"
+
+    interactor.delivery_address_selectable:
+        class: %interactor.delivery_address_selectable.class%
+        arguments:
+            - "@customer.repository"
+            - "@deliveryaddress.repository"
+
+    interactor.login:
+        class: %interactor.login.class%
+        arguments:
+            - "@email.repository"
+
+    interactor.show_orders:
+        class: %interactor.show_orders.class%
+        arguments:
+            - "@order.repository"
+
+    interactor.submit_order:
+        class: %interactor.submit_order_unregistered.class%
+        arguments:
+            - "@invoiceaddress.repository"
+            - "@deliveryaddress.repository"
+            - "@basket.repository"
+            - "@order.repository"
+            - "@customer.repository"
+            - "@email.repository"
+            - "@paymentmethod.repository"
+            - "@logisticpartner.repository"
+            - "@interactor.present_current_address"
+
+    interactor.present_article:
+        class: %interactor.present_article.class%
+        arguments:
+            - "@article.repository"
+
+    interactor.present_articles:
+        class: %interactor.present_articles.class%
+        arguments:
+            - "@article.repository"
+
+    interactor.present_current_address:
+        class: %interactor.present_current_address.class%
+        arguments:
+            - "@deliveryaddress.repository"
+            - "@interactor.present_last_used_address"
+
+    interactor.present_last_used_address:
+        class: %interactor.present_last_used_address.class%
+        arguments:
+            - "@customer.repository"
+
+    interactor.present_logisticpartners:
+        class: %interactor.present_logisticpartners.class%
+        arguments:
+            - "@logisticpartner.repository"
+
+    interactor.present_paymentmethods:
+        class: %interactor.present_paymentmethods.class%
+        arguments:
+            - "@paymentmethod.repository"
+
+    interactor.search_articles:
+        class: %interactor.search_articles.class%
+        arguments:
+            - "@article.repository"

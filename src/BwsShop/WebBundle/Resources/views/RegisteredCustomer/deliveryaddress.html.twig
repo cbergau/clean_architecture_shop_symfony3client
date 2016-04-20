@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Delivery Address</strong>
+        <a class="btn btn-default btn-xs" title="Add a new address" data-toggle="modal"
+           data-target="#myModal"
+           ng-click="openNewDeliveryAddressForm()">
+            <span class="glyphicon glyphicon-plus"></span> Add
+        </a>
+        <a class="btn btn-default btn-xs" title="Select a delivery address" data-toggle="modal"
+           data-target="#selectDeliveryAddress"
+           ng-click="openDeliveryAddressBook()">
+            <span class="glyphicon glyphicon-cog"></span> Select
+        </a>
+    </div>
+    <div class="panel-body">
+        <div>
+            <span ng-bind="selectedDeliveryAddress.first_name"></span>
+            <span ng-if="!selectedDeliveryAddress.first_name">{{ delivery.firstName }}</span>
+            <span ng-bind="selectedDeliveryAddress.last_name"></span>
+            <span ng-if="!selectedDeliveryAddress.last_name">{{ delivery.lastName }}</span>
+        </div>
+        <div>
+            <span ng-bind="selectedDeliveryAddress.street"></span>
+            <span ng-if="!selectedDeliveryAddress.street">{{ delivery.street }}</span>
+        </div>
+        <div>
+            <span ng-bind="selectedDeliveryAddress.zip"></span>
+            <span ng-if="!selectedDeliveryAddress.zip">{{ delivery.zip }}</span>
+            <span ng-bind="selectedDeliveryAddress.city"></span>
+            <span ng-if="!selectedDeliveryAddress.city">{{ delivery.city }}</span>
+        </div>
+    </div>
+</div>

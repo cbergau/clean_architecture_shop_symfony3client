@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Invoice Address</strong>
+        <a class="btn btn-default btn-xs" title="Change invoice address" data-toggle="modal"
+           data-target="#selectDeliveryAddress"
+           ng-click="openChangeInvoiceAddressForm()">
+            <span class="glyphicon glyphicon-pencil"></span> Change
+        </a>
+    </div>
+    <div class="panel-body">
+        <div>
+            <span ng-bind="currentInvoiceAddress.first_name"></span>
+            <span ng-if="!currentInvoiceAddress.first_name">{{ invoice.firstName }}</span>
+            <span ng-bind="currentInvoiceAddress.last_name"></span>
+            <span ng-if="!currentInvoiceAddress.last_name">{{ invoice.lastName }}</span>
+        </div>
+        <div>
+            <span ng-bind="currentInvoiceAddress.street"></span>
+            <span ng-if="!currentInvoiceAddress.street">{{ invoice.street }}</span>
+        </div>
+        <div>
+            <span ng-bind="currentInvoiceAddress.zip"></span>
+            <span ng-if="!currentInvoiceAddress.zip">{{ invoice.zip }}</span>
+            <span ng-bind="currentInvoiceAddress.city"></span>
+            <span ng-if="!currentInvoiceAddress.city">{{ invoice.city }}</span>
+        </div>
+    </div>
+</div>

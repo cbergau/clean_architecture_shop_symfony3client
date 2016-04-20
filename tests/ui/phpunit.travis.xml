@@ -1,0 +1,10 @@
+<phpunit bootstrap="bootstrap.php">
+    <testsuite>
+        <directory>./tests</directory>
+    </testsuite>
+    <php>
+        <env name="HUB_URL" value="http://127.0.0.2:6667/wd/hub" />
+        <env name="BROWSER" value="firefox" />
+        <env name="BASE_URL" value="http://www.clean_arch_shop.de" />
+    </php>
+</phpunit>

@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for article in articles %}
+        <div class="row">
+            <form action="{{ url('bws_shop_web_add_to_basket') }}" method="post">
+                <div class="col-md-2">
+                    <img src="{{ article.imagePath }}" alt="" class="list_articles_image" />
+                </div>
+                <div class="col-md-10">
+                    <h2 class="article-title"><a href="{{ url('bws_shop_view_article', {'id': article.id}) }}">{{ article.title }}</a></h2>
+
+                    <p>
+                        <span class="price">{{ article.price }} €</span>
+                        <select name="count">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <input type="hidden" name="articleId" value="{{ article.id }}">
+                        <button type="submit" class="btn btn-xs btn-primary">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
+                        </button>
+                    </p>
+
+                    <p>{{ article.description|slice(0, 400) }} ...</p>
+                </div>
+            </form>
+        </div>
+        <hr/>
+    {% endfor %}
+{% endblock %}

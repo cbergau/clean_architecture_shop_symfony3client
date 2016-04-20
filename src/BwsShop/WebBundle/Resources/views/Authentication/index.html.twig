@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <form role="form" action="{{ path('bws_shop_web_authentication') }}" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Login for Customers</h1>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default" name="login" value="1">Submit</button>
+            </div>
+            <div class="col-md-4">
+                <h1>New Customer</h1>
+
+                <p>You will be registered as a new customer and you can login for your next order.</p>
+
+                <a href="{{ url('bws_shop_web_registering') }}" class="btn btn-default">Proceed</a>
+            </div>
+            <div class="col-md-4">
+                <h1>No Registration</h1>
+
+                <p>No registration is required.</p>
+
+                <a href="{{ url('bws_shop_web_unregistered') }}" class="btn btn-default">Proceed</a>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

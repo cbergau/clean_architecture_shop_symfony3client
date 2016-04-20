@@ -1,0 +1,155 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <form role="form" class="form-horizontal" method="post" action="{{ url('bws_shop_web_submit_order') }}">
+
+        <h3>Invoice Address</h3>
+
+        <div class="form-group">
+            <label for="invoiceFirstName" class="col-sm-2 control-label">*First Name:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="invoiceFirstName" id="invoiceFirstName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceLastName" class="col-sm-2 control-label">*Last Name:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="invoiceLastName" id="invoiceLastName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceBirthday" class="col-sm-2 control-label">*Birthday:</label>
+
+            <div class="col-xs-1">
+                <input type="text" class="form-control" name="invoiceBirthdayDay" id="invoiceBirthdayDay" required
+                       placeholder="DD">
+            </div>
+            <div class="col-xs-1">
+                <input type="text" class="form-control" name="invoiceBirthdayMonth" id="invoiceBirthdayMonth" required
+                       placeholder="MM">
+            </div>
+            <div class="col-xs-1">
+                <input type="text" class="form-control" name="invoiceBirthdayYear" id="invoiceBirthdayYear" required
+                       placeholder="YYYY">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceStreetHouseNumber" class="col-sm-2 control-label">*Street/No:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="invoiceStreetHouseNumber" id="invoiceStreetHouseNumber"
+                       required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceZip" class="col-sm-2 control-label">*Zip:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="invoiceZip" id="invoiceZip" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceZip" class="col-sm-2 control-label">*City:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="invoiceCity" id="invoiceCity" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceZip" class="col-sm-2 control-label">*Email:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="email" id="email" required>
+            </div>
+        </div>
+
+        <p>* Required fields</p>
+
+        <h3>Delivery Address</h3>
+
+        <div class="form-group">
+            <label for="deliveryFirstName" class="col-sm-2 control-label">*First Name:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="deliveryFirstName" id="deliveryFirstName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryLastName" class="col-sm-2 control-label">*Last Name:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="deliveryLastName" id="deliveryLastName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryStreetHouseNumber" class="col-sm-2 control-label">*Street/No:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="deliveryStreetHouseNumber" id="deliveryStreetHouseNumber"
+                       required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryZip" class="col-sm-2 control-label">*Zip:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="deliveryZip" id="deliveryZip" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryZip" class="col-sm-2 control-label">*City:</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="deliveryCity" id="deliveryCity" required>
+            </div>
+        </div>
+
+        <p>* Required fields</p>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <h3>Payment</h3>
+
+                {% for paymentMethod in paymentMethods %}
+                    <div class="radio">
+                        <label>
+                            <input type="radio"
+                                   name="paymentMethodId"
+                                   value="{{ paymentMethod.id }}">
+                            {{ paymentMethod.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <div class="col-md-4 col-md-offset-2">
+                <h3>Logistic Partner</h3>
+
+                {% for logisticPartner in logisticPartners %}
+                    <div class="radio">
+                        <label>
+                            <input type="radio"
+                                   name="logisticPartnerId"
+                                   value="{{ logisticPartner.id }}">
+                            {{ logisticPartner.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="row registered_basket_details">
+            {{ include('BwsShopWebBundle:Basket:basket_details.html.twig') }}
+        </div>
+
+        <div class="row">
+            <input type="hidden" name="registering" value="{{ registering }}">
+            <button type="submit" class="btn btn-primary pull-right">Submit Order</button>
+        </div>
+
+    </form>
+
+{% endblock %}

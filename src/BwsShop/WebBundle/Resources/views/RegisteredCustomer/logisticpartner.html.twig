@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>Logistic Partner</strong></div>
+    <div class="panel-body">
+        {% for logisticPartner in logisticPartners %}
+            <div class="radio logisticpartner">
+                <label>
+                    <input type="radio"
+                           name="logisticPartnerId"
+                           value="{{ logisticPartner.id }}">
+                    <img src="{{ asset('') }}/img/lp/{{ logisticPartner.name }}.png"
+                         alt="{{ logisticPartner.name }}">
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
