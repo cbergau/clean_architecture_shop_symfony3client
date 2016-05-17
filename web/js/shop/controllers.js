@@ -5,7 +5,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
     $scope.by = '';
 
     $scope.login = function (email, password) {
-        $http.post('shop/authentication/login.json', {'email': email, 'password': password})
+        $http.post('authentication/login.json', {'email': email, 'password': password})
             .success(function (data) {
                 location.href = location.href;
             })
@@ -15,13 +15,13 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
     };
 
     $scope.updateBasket = function () {
-        $http.get('shop/basket.json').success(function (data) {
+        $http.get('basket.json').success(function (data) {
             $scope.basket = data;
         });
     };
 
     $scope.changeBasket = function (position) {
-        $http.post('shop/basket/change.json', position).success(function (data) {
+        $http.post('basket/change.json', position).success(function (data) {
             $scope.updateBasket();
         });
     };
@@ -32,7 +32,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
             return;
         }
 
-        $http.get('shop/search.json?by=' + $scope.by).success(function (data) {
+        $http.get('search.json?by=' + $scope.by).success(function (data) {
             $scope.articles = data;
         })
     };
@@ -40,7 +40,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
     $scope.updateBasket();
 
     $scope.getDeliveryAddresses = function (successCallback) {
-        $http.get('shop/deliveryaddress/list.json').success(function (data) {
+        $http.get('deliveryaddress/list.json').success(function (data) {
             $scope.deliveryaddresses = data;
         }).success(successCallback);
     };
@@ -88,7 +88,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
 var ChangeInvoiceAddress = function ($scope, $modalInstance, $http) {
     $scope.currentInvoiceAddress = {};
     $scope.saveInvoiceAddress = function () {
-        $http.post('shop/invoiceaddress/change.json', $scope.currentInvoiceAddress).success(function (data) {
+        $http.post('invoiceaddress/change.json', $scope.currentInvoiceAddress).success(function (data) {
             $modalInstance.close($scope.currentInvoiceAddress);
         });
     };
@@ -101,7 +101,7 @@ var AddDeliveryAddress = function ($scope, $modalInstance, $http) {
     $scope.address = {};
 
     $scope.saveDeliveryAddress = function () {
-        $http.post('shop/deliveryaddress/add.json', $scope.address)
+        $http.post('deliveryaddress/add.json', $scope.address)
             .success(function (data) {
                 $modalInstance.close();
             })
@@ -119,7 +119,7 @@ var DeliveryAddressBook = function ($scope, $modalInstance, $http, $log, deliver
     $scope.deliveryaddresses = deliveryaddresses;
 
     $scope.selectDeliveryAddress = function (address) {
-        $http.post('shop/deliveryaddress/select.json', address).success(function (data) {
+        $http.post('deliveryaddress/select.json', address).success(function (data) {
             $modalInstance.close(address);
         });
     };
