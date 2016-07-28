@@ -41,7 +41,7 @@
                     {% verbatim %}
                     <div class="search-articles-result" ng-show="articles.length > 0">
                         <div ng-repeat="article in articles" class="row article-found no-margin">
-                            <a href="shop/article/{{ article.id }}">
+                            <a href="article/{{ article.id }}">
                                 <div class="col-md-1">
                                     <img ng-src="{{ article.imagePath }}" style="width: 50px;"/>
                                 </div>
@@ -122,7 +122,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="{{ asset('js/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/vendor/angular/angular.min.js') }}"></script>
     <script src="{{ asset('js/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>

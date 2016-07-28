@@ -1,6 +1,6 @@
 var app = angular.module('shopApp', ['ui.bootstrap']);
 
-app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
+app.controller('ShopCtrl', function ($scope, $http, $uibModal, $log) {
 
     $scope.by = '';
 
@@ -46,7 +46,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
     };
 
     $scope.openChangeInvoiceAddressForm = function (size) {
-        var changeInvoiceAddressForm = $modal.open({
+        var changeInvoiceAddressForm = $uibModal.open({
             templateUrl: 'changeInvoiceAddressForm.html',
             controller: ChangeInvoiceAddress,
             size: size
@@ -58,7 +58,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
     };
 
     $scope.openNewDeliveryAddressForm = function (size) {
-        var newDeliveryAddressForm = $modal.open({
+        var newDeliveryAddressForm = $uibModal.open({
             templateUrl: 'newDeliveryAddressForm.html',
             controller: AddDeliveryAddress,
             size: size
@@ -67,7 +67,7 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
 
     $scope.openDeliveryAddressBook = function (size) {
         $scope.getDeliveryAddresses(function () {
-            var deliveryAddressBook = $modal.open({
+            var deliveryAddressBook = $uibModal.open({
                 templateUrl: 'deliveryAddressBook.html',
                 controller: DeliveryAddressBook,
                 size: size,
@@ -85,25 +85,25 @@ app.controller('ShopCtrl', function ($scope, $http, $modal, $log) {
     };
 });
 
-var ChangeInvoiceAddress = function ($scope, $modalInstance, $http) {
+var ChangeInvoiceAddress = function ($scope, $uibModalInstance, $http) {
     $scope.currentInvoiceAddress = {};
     $scope.saveInvoiceAddress = function () {
         $http.post('invoiceaddress/change.json', $scope.currentInvoiceAddress).success(function (data) {
-            $modalInstance.close($scope.currentInvoiceAddress);
+            $uibModalInstance.close($scope.currentInvoiceAddress);
         });
     };
     $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+        $uibModalInstance.dismiss('cancel');
     };
 };
 
-var AddDeliveryAddress = function ($scope, $modalInstance, $http) {
+var AddDeliveryAddress = function ($scope, $uibModalInstance, $http) {
     $scope.address = {};
 
     $scope.saveDeliveryAddress = function () {
         $http.post('deliveryaddress/add.json', $scope.address)
             .success(function (data) {
-                $modalInstance.close();
+                $uibModalInstance.close();
             })
             .error(function (data) {
 
@@ -111,16 +111,16 @@ var AddDeliveryAddress = function ($scope, $modalInstance, $http) {
     };
 
     $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+        $uibModalInstance.dismiss('cancel');
     }
 };
 
-var DeliveryAddressBook = function ($scope, $modalInstance, $http, $log, deliveryaddresses) {
+var DeliveryAddressBook = function ($scope, $uibModalInstance, $http, $log, deliveryaddresses) {
     $scope.deliveryaddresses = deliveryaddresses;
 
     $scope.selectDeliveryAddress = function (address) {
         $http.post('deliveryaddress/select.json', address).success(function (data) {
-            $modalInstance.close(address);
+            $uibModalInstance.close(address);
         });
     };
 
@@ -133,10 +133,10 @@ var DeliveryAddressBook = function ($scope, $modalInstance, $http, $log, deliver
     };
 
     $scope.ok = function () {
-        $modalInstance.close();
+        $uibModalInstance.close();
     };
 
     $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+        $uibModalInstance.dismiss('cancel');
     };
 };
