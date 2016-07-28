@@ -1,0 +1,26 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: clean_arch_shop
+    links:
+      - mysql
+      - selenium
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: myrootpw
+    ports:
+      - 3306:3306
+    volumes:
+      - ./infrastructure/database/mysql:/docker-entrypoint-initdb.d
+
+  selenium:
+    image: selenium/hub
+    ports:
+      - 4444:4444
