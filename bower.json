@@ -13,6 +13,6 @@
         "angular-resource": "1.5.8",
         "jquery": "3.1.0",
         "angular-animate": "1.5.8",
-        "angular-bootstrap": "2.0.0"
+        "angular-bootstrap": "2.1.3"
     }
 }
