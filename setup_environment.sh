@@ -1,5 +1,4 @@
-#docker build -t clean_arch_shop .
-
+docker-compose build
 docker-compose up -d
 
 docker run --rm -v $(pwd):/app composer/composer install --prefer-dist --ignore-platform-reqs

@@ -1,7 +1,5 @@
 FROM php:7-apache
 
-COPY . /var/www/html
-
 RUN apt-get -yqq update \
     && apt-get install -yqq wget \
     && wget -O - https://download.newrelic.com/548C16BF.gpg | apt-key add - \
@@ -26,3 +24,9 @@ RUN { \
 
 # New Relic configuration
 RUN echo "newrelic.license=f7d5ff979f36d064f017a684cc4c4b1f9123156e" >> /usr/local/etc/php/conf.d/newrelic.ini
+
+COPY . /var/www/html
+
+# Symfony cache
+RUN usermod -u 1000 www-data
+RUN chown -R www-data:www-data /var/www/html/var
