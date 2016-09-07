@@ -4,6 +4,7 @@ namespace Bws\Interactor\ShowOrders;
 
 use Bws\Entity\Address;
 use Bws\Entity\BasketPosition;
+use Bws\Entity\Order;
 use Bws\Repository\OrderRepository;
 
 class ShowOrdersInteractor
@@ -61,10 +62,10 @@ class ShowOrdersInteractor
     }
 
     /**
-     * @param $order
+     * @param Order $order
      * @param $presentableOrder
      */
-    private function putBasketPositionsInResponse($order, $presentableOrder)
+    private function putBasketPositionsInResponse(Order $order, $presentableOrder)
     {
         /** @var BasketPosition $position */
         foreach ($order->getBasket()->getPositions() as $position) {
