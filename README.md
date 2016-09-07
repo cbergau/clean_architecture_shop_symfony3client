@@ -1,6 +1,6 @@
 Clean Architecture Shop
 ==============
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/5bf37e1e-72fb-4950-9975-7e348beb5ed5/big.png)](https://insight.sensiolabs.com/projects/5bf37e1e-72fb-4950-9975-7e348beb5ed5)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b24d669-60a8-4f18-bbc1-8169583431e8/big.png)](https://insight.sensiolabs.com/projects/0b24d669-60a8-4f18-bbc1-8169583431e8)
 
 [![Dependency Status](https://www.versioneye.com/user/projects/579a3ebe3815c800516147e0/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/579a3ebe3815c800516147e0)
 
