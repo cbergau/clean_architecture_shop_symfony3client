@@ -2,7 +2,7 @@
 
 namespace BwsShop\WebBundle\Controller;
 
-use Bws\Interactor\AddDeliveryAddressRequest;
+use Bws\Usecase\AddDeliveryAddress\AddDeliveryAddressRequest;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,6 +45,7 @@ class DeliveryAddressController extends FOSRestController
 
         $result = $this->get('interactor.delivery_address_selectable')->execute($customerId, $addressId);
 
+        //@todo presenter..
         switch ($result->code) {
             case $result::ADDRESS_DOES_NOT_BELONG_TO_GIVEN_CUSTOMER:
                 $view = $this->view('forbidden', 403)->setTemplateVar('result');
@@ -84,6 +85,7 @@ class DeliveryAddressController extends FOSRestController
 
         $result = $this->get('interactor.add_delivery_address')->execute($request);
 
+        //@todo presenter..
         switch ($result->code) {
             case $result::SUCCESS:
                 $view = $this->view('ok', 200)->setTemplateVar('result');

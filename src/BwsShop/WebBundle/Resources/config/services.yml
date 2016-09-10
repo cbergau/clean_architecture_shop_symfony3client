@@ -1,20 +1,20 @@
 parameters:
-    interactor.add_to_basket.class: Bws\Interactor\AddToBasket
-    interactor.add_delivery_address.class: Bws\Interactor\AddDeliveryAddress
-    interactor.view_basket.class: Bws\Interactor\ViewBasket
-    interactor.change_basket.class: Bws\Interactor\ChangeBasket
-    interactor.change_invoice_address.class: Bws\Interactor\ChangeInvoiceAddress
-    interactor.show_orders.class: Bws\Interactor\ShowOrders\ShowOrdersInteractor
-    interactor.submit_order_unregistered.class: Bws\Interactor\SubmitOrder
-    interactor.present_article.class: Bws\Interactor\PresentArticle
-    interactor.present_articles.class: Bws\Interactor\PresentArticles
-    interactor.present_paymentmethods.class: Bws\Interactor\PresentPaymentMethods
-    interactor.present_logisticpartners.class: Bws\Interactor\PresentLogisticPartners
-    interactor.search_articles.class: Bws\Interactor\SearchArticles
-    interactor.login.class: Bws\Interactor\Login
-    interactor.present_last_used_address.class: Bws\Interactor\PresentLastUsedAddress
-    interactor.present_current_address.class: Bws\Interactor\PresentCurrentAddress
-    interactor.delivery_address_selectable.class: Bws\Interactor\DeliveryAddressSelectable
+    interactor.add_to_basket.class: Bws\Usecase\AddToBasket\AddToBasket
+    interactor.add_delivery_address.class: Bws\Usecase\AddDeliveryAddress\AddDeliveryAddress
+    interactor.view_basket.class: Bws\Usecase\ViewBasket\ViewBasket
+    interactor.change_basket.class: Bws\Usecase\ChangeBasket\ChangeBasket
+    interactor.change_invoice_address.class: Bws\Usecase\ChangeInvoiceAddress\ChangeInvoiceAddress
+    interactor.show_orders.class: Bws\Usecase\ShowOrders\ShowOrdersInteractor
+    interactor.submit_order_unregistered.class: Bws\Usecase\SubmitOrder\SubmitOrder
+    interactor.present_article.class: Bws\Usecase\PresentArticle\PresentArticle
+    interactor.present_articles.class: Bws\Usecase\PresentArticles\PresentArticles
+    interactor.present_paymentmethods.class: Bws\Usecase\PresentPaymentMethods\PresentPaymentMethods
+    interactor.present_logisticpartners.class: Bws\Usecase\PresentLogisticPartners\PresentLogisticPartners
+    interactor.search_articles.class: Bws\Usecase\SearchArticles\SearchArticles
+    interactor.login.class: Bws\Usecase\Login\Login
+    interactor.present_last_used_address.class: Bws\Usecase\PresentLastUsedAddress\PresentLastUsedAddress
+    interactor.present_current_address.class: Bws\Usecase\PresentCurrentAddress\PresentCurrentAddress
+    interactor.delivery_address_selectable.class: Bws\Usecase\DeliveryAddressSelectable\DeliveryAddressSelectable
 
 services:
     article.repository:

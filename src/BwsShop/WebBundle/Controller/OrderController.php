@@ -2,10 +2,10 @@
 
 namespace BwsShop\WebBundle\Controller;
 
-use Bws\Interactor\ShowOrders\ShowOrdersInteractor;
-use Bws\Interactor\SubmitOrder;
-use Bws\Interactor\SubmitOrderAsRegisteredCustomerRequest;
-use Bws\Interactor\SubmitOrderAsUnregisteredCustomerRequest;
+use Bws\Usecase\ShowOrders\ShowOrdersInteractor;
+use Bws\Usecase\SubmitOrder\SubmitOrder;
+use Bws\Usecase\SubmitOrder\SubmitOrderAsRegisteredCustomerRequest;
+use Bws\Usecase\SubmitOrder\SubmitOrderAsUnregisteredCustomerRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -59,13 +59,14 @@ class OrderController extends Controller
         $interactor = $this->get('interactor.submit_order');
         $response = $interactor->asRegisteredCustomer($request);
 
+        //@todo presenter and dont throw exception....
         switch ($response->getCode()) {
             case $response::SUCCESS:
                 $httpRequest->getSession()->set('orderId', $response->getOrderId());
                 $httpRequest->getSession()->set('basketId', 0);
                 return $this->redirect($this->generateUrl('bws_shop_web_thanks'));
             default:
-                throw new \Exception($response->getMessage());
+                throw new \Exception($response->getMessage() . $response->getCode());
         }
     }
 

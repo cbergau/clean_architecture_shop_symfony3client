@@ -2,6 +2,7 @@
 
 namespace BwsShop\WebBundle\Controller;
 
+use Bws\Usecase\Login\Login;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations\View;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,6 +43,7 @@ class AuthenticationController extends FOSRestController
         $email = $request->get('email');
         $password = $request->get('password');
 
+        /** @var Login $interactor */
         $interactor = $this->get('interactor.login');
         $result = $interactor->execute($email, $password);
 

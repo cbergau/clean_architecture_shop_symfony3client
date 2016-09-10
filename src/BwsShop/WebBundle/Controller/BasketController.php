@@ -2,13 +2,13 @@
 
 namespace BwsShop\WebBundle\Controller;
 
-use Bws\Interactor\ChangeBasket;
-use Bws\Interactor\ChangeBasketRequest;
+use Bws\Usecase\ChangeBasket\ChangeBasket;
+use Bws\Usecase\ChangeBasket\ChangeBasketRequest;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
-use Bws\Interactor\AddToBasket;
-use Bws\Interactor\AddToBasketRequest;
-use Bws\Interactor\ViewBasket;
+use Bws\Usecase\AddToBasket\AddToBasket;
+use Bws\Usecase\AddToBasket\AddToBasketRequest;
+use Bws\Usecase\ViewBasket\ViewBasket;
 use Symfony\Component\HttpFoundation\Request;
 
 class BasketController extends FOSRestController

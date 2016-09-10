@@ -2,8 +2,9 @@
 
 namespace BwsShop\WebBundle\Controller;
 
-use Bws\Interactor\SearchArticles;
-use Bws\Interactor\SearchArticlesRequest;
+use Bws\Usecase\PresentArticles\PresentArticles;
+use Bws\Usecase\SearchArticles\SearchArticles;
+use Bws\Usecase\SearchArticles\SearchArticlesRequest;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +13,9 @@ class ArticleController extends FOSRestController
 {
     public function indexAction()
     {
-        $articles = $this->get('interactor.present_articles')->execute()->getArticles();
+        /** @var PresentArticles $presentArticles */
+        $presentArticles = $this->get('interactor.present_articles');
+        $articles = $presentArticles->execute()->getArticles();
         return $this->render('BwsShopWebBundle:Article:index.html.twig', array('articles' => $articles));
     }
 
@@ -41,7 +44,8 @@ class ArticleController extends FOSRestController
 
     public function viewAction(Request $request)
     {
-        $article = $this->get('interactor.present_article')->execute($request->get('id'))->getArticle();
+        $presentArticle = $this->get('interactor.present_article');
+        $article = $presentArticle->execute($request->get('id'))->getArticle();
         $view = $this
             ->view($article, 200)
             ->setTemplate('BwsShopWebBundle:Article:view.html.twig')

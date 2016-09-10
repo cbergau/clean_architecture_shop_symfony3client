@@ -2,7 +2,7 @@
 
 namespace BwsShop\WebBundle\Controller;
 
-use Bws\Interactor\ChangeInvoiceAddressRequest;
+use Bws\Usecase\ChangeInvoiceAddress\ChangeInvoiceAddressRequest;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,6 +28,7 @@ class InvoiceAddressController extends FOSRestController
 
         $result = $this->get('interactor.change_invoice_address')->execute($request);
 
+        //@todo presenter
         switch ($result->code) {
             case $result::SUCCESS:
                 $view = $this->view('ok', 200)->setTemplateVar('result');
