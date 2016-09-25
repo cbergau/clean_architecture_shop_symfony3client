@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\ChangeBasket;
 
 use Bws\Entity\ArticleStub;
 use Bws\Entity\BasketPositionStub;

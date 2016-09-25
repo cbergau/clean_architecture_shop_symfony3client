@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\PresentArticle;
 
 use Bws\Entity\ArticleStub;
 use Bws\Repository\ArticleRepositoryMock;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\PriceFormatter;
 
 class PriceFormatterTest extends \PHPUnit_Framework_TestCase
 {

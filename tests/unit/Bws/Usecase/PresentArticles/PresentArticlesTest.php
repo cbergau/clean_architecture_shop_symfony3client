@@ -1,41 +1,39 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\PresentArticles;
 
 use Bws\Entity\ArticleStub;
 use Bws\Repository\ArticleRepositoryMock;
 
-class SearchArticlesTest extends \PHPUnit_Framework_TestCase
+class PresentArticlesTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var PresentArticles
+     */
+    private $interactor;
+
     /**
      * @var ArticleRepositoryMock
      */
     private $articleRepository;
 
-    /**
-     * @var SearchArticles
-     */
-    private $interactor;
-
     public function setUp()
     {
         $this->articleRepository = new ArticleRepositoryMock();
-        $this->interactor        = new SearchArticles($this->articleRepository);
+        $this->interactor        = new PresentArticles($this->articleRepository);
     }
 
-    public function testNoArticlesFound()
+    public function testReturnsNoArticles()
     {
-        $response = $this->interactor->execute(new SearchArticlesRequest('An Article which does not exist'));
+        $response = $this->interactor->execute();
         $this->assertEquals(array(), $response->getArticles());
-        $this->assertEquals(1, $this->articleRepository->getSearchCallCount());
     }
 
-    public function testArticlesFound()
+    public function testReturnsArticles()
     {
         $this->articleRepository->doSave(new ArticleStub());
 
-        $response = $this->interactor->execute(new SearchArticlesRequest(ArticleStub::TITLE));
-
+        $response = $this->interactor->execute();
         $this->assertEquals(
             array(
                 array(
@@ -49,6 +47,5 @@ class SearchArticlesTest extends \PHPUnit_Framework_TestCase
             ),
             $response->getArticles()
         );
-        $this->assertEquals(1, $this->articleRepository->getSearchCallCount());
     }
 }

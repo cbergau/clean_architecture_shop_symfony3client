@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor\ShowOrdersInteractor;
+namespace Bws\Usecase\ShowOrders;
 
 use Bws\Entity\Address;
 use Bws\Entity\Article;
@@ -9,8 +9,8 @@ use Bws\Entity\BasketPosition;
 use Bws\Entity\Customer;
 use Bws\Entity\DeliveryAddress;
 use Bws\Entity\InvoiceAddress;
-use Bws\Interactor\ShowOrders\PresentableOrder;
-use Bws\Interactor\ShowOrders\ShowOrdersInteractor;
+use Bws\Usecase\ShowOrders\PresentableOrder;
+use Bws\Usecase\ShowOrders\ShowOrdersInteractor;
 use Bws\Repository\OrderRepositoryMock;
 
 class ShowOrdersInteractorTest extends \PHPUnit_Framework_TestCase

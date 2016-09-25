@@ -1,10 +1,11 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\AddDeliveryAddress;
 
 use Bws\Entity\CustomerStub;
 use Bws\Repository\CustomerRepositoryMock;
 use Bws\Repository\DeliveryAddressRepositoryMock;
+use Bws\Usecase\AddDeliveryAddress\AddDeliveryAddress;
 
 class AddDeliveryAddressTest extends \PHPUnit_Framework_TestCase
 {

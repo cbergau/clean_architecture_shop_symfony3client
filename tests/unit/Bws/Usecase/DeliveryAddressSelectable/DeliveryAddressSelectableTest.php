@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\DeliveryAddressSelectable;
 
 use Bws\Entity\Customer;
 use Bws\Entity\CustomerStub;

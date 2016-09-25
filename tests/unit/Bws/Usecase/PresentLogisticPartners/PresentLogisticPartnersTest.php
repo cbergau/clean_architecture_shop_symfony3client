@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\PresentLogisticPartners;
 
 use Bws\Entity\LogisticPartnerDHLStub;
 use Bws\Entity\LogisticPartnerHermesStub;

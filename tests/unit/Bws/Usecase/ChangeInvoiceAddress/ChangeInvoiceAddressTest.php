@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\ChangeInvoiceAddress;
 
 use Bws\Entity\CustomerStub;
 use Bws\Repository\CustomerRepositoryMock;

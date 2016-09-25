@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\PresentLastUsedAddress;
 
 use Bws\Entity\DeliveryAddressStub;
 use Bws\Entity\InvoiceAddressStub;

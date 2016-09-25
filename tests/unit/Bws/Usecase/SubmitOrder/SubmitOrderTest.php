@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\SubmitOrder;
 
 use Bws\Entity\BasketStub;
 use Bws\Entity\CustomerStub;
@@ -19,6 +19,8 @@ use Bws\Repository\InvoiceAddressRepositoryMock;
 use Bws\Repository\LogisticPartnerRepositoryMock;
 use Bws\Repository\OrderRepositoryMock;
 use Bws\Repository\PaymentMethodRepositoryMock;
+use Bws\Usecase\PresentCurrentAddress\PresentCurrentAddress;
+use Bws\Usecase\PresentLastUsedAddress\PresentLastUsedAddress;
 
 class SubmitOrderTest extends \PHPUnit_Framework_TestCase
 {

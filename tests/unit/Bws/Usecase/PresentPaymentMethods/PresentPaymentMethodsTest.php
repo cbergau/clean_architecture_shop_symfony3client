@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\PresentPaymentMethods;
 
 use Bws\Entity\PaymentMethodCashOnDeliveryStub;
 use Bws\Entity\PaymentMethodInvoiceStub;

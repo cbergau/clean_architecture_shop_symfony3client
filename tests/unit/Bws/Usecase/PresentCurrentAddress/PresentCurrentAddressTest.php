@@ -1,12 +1,13 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\PresentCurrentAddress;
 
 use Bws\Entity\Customer;
 use Bws\Entity\CustomerStub;
 use Bws\Entity\DeliveryAddressStub;
 use Bws\Repository\CustomerRepositoryMock;
 use Bws\Repository\DeliveryAddressRepositoryMock;
+use Bws\Usecase\PresentLastUsedAddress\PresentLastUsedAddress;
 
 class PresentCurrentAddressTest extends \PHPUnit_Framework_TestCase
 {

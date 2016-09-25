@@ -1,0 +1,1 @@
+docker exec webshop_web_1 php "$@"

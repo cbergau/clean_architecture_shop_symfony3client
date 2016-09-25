@@ -1,6 +1,6 @@
 <?php
 
-namespace Bws\Interactor;
+namespace Bws\Usecase\Login;
 
 use Bws\Entity\CustomerStub;
 use Bws\Entity\EmailAddressStub;
