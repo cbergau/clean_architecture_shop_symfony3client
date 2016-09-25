@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BwsDoctrineBundle\Entity\Customer" table="customer" repository-class="CustomerRepository">
+    <indexes>
+      <index name="IDX_81398E091765152C" columns="last_used_invoice_address_id"/>
+      <index name="IDX_81398E0936413CE3" columns="last_used_email_address_id"/>
+      <index name="IDX_81398E09EEE96188" columns="last_used_delivery_address_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="isRegistered" type="boolean" column="is_registered" nullable="true"/>
+    <field name="customerString" type="string" column="customer_string" length="256" nullable="true"/>
+    <field name="password" type="string" column="password" length="256" nullable="true"/>
+    <field name="birthday" type="date" column="birthday" nullable="true"/>
+    <many-to-one field="lastUsedDeliveryAddress" target-entity="DeliveryAddress">
+      <join-columns>
+        <join-column name="last_used_delivery_address_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="lastUsedEmailAddress" target-entity="EmailAddress">
+      <join-columns>
+        <join-column name="last_used_email_address_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="lastUsedInvoiceAddress" target-entity="InvoiceAddress">
+      <join-columns>
+        <join-column name="last_used_invoice_address_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

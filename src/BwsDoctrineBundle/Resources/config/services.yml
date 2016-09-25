@@ -1,0 +1,21 @@
+parameters:
+    article.entity.class: BwsDoctrineBundle\Entity\Article
+    article.repository.class: BwsDoctrineBundle\Entity\ArticleRepository
+    basket.entity.class: BwsDoctrineBundle\Entity\Basket
+    basket.repository.class: BwsDoctrineBundle\Entity\BasketRepository
+    basket.position.entity.class: BwsDoctrineBundle\Entity\BasketPosition
+    basket.position.repository.class: BwsDoctrineBundle\Entity\BasketPositionRepository
+    customer.entity.class: BwsDoctrineBundle\Entity\Customer
+    customer.repository.class: BwsDoctrineBundle\Entity\CustomerRepository
+    email.entity.class: BwsDoctrineBundle\Entity\EmailAddress
+    email.repository.class: BwsDoctrineBundle\Entity\EmailAddressRepository
+    invoiceaddress.entity.class: BwsDoctrineBundle\Entity\InvoiceAddress
+    invoiceaddress.repository.class: BwsDoctrineBundle\Entity\InvoiceAddressRepository
+    deliveryaddress.entity.class: BwsDoctrineBundle\Entity\DeliveryAddress
+    deliveryaddress.repository.class: BwsDoctrineBundle\Entity\DeliveryAddressRepository
+    logisticpartner.entity.class: BwsDoctrineBundle\Entity\LogisticPartner
+    logisticpartner.repository.class: BwsDoctrineBundle\Entity\LogisticPartnerRepository
+    order.entity.class: BwsDoctrineBundle\Entity\Order
+    order.repository.class: BwsDoctrineBundle\Entity\OrderRepository
+    paymentmethod.entity.class: BwsDoctrineBundle\Entity\PaymentMethod
+    paymentmethod.repository.class: BwsDoctrineBundle\Entity\PaymentMethodRepository
