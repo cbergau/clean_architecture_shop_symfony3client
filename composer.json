@@ -4,7 +4,7 @@
     "type": "project",
     "description": "PHP Webshop in Clean Architecture",
     "autoload": {
-        "psr-4": { "": "src/" },
+        "psr-4": { "Bws\\": "src/Bws", "BwsDoctrineBundle\\": "src/BwsDoctrineBundle", "BwsShop\\": "src/BwsShop" },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "autoload-dev": {
