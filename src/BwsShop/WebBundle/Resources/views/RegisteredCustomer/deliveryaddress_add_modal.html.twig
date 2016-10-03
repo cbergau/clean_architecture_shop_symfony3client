@@ -7,10 +7,10 @@
         <form class="form-horizontal" role="form" name="newDeliveryAddressForm">
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="inputLastName" class="col-sm-3 control-label">First Name:</label>
+                    <label for="inputFirstName" class="col-sm-3 control-label">First Name:</label>
 
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" ng-model="address.first_name">
+                        <input type="text" id="inputFirstName" class="form-control" ng-model="address.first_name">
                     </div>
                 </div>
 
@@ -18,7 +18,7 @@
                     <label for="inputLastName" class="col-sm-3 control-label">Last Name:</label>
 
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" ng-model="address.last_name">
+                        <input type="text" id="inputLastName" class="form-control" ng-model="address.last_name">
                     </div>
                 </div>
 
@@ -26,7 +26,7 @@
                     <label for="inputStreet" class="col-sm-3 control-label">Street:</label>
 
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" ng-model="address.street">
+                        <input type="text" id="inputStreet" class="form-control" ng-model="address.street">
                     </div>
                 </div>
 
@@ -34,13 +34,13 @@
                     <label for="inputZip" class="col-sm-3 control-label">Zip:</label>
 
                     <div class="col-sm-3">
-                        <input class="form-control" ng-model="address.zip">
+                        <input class="form-control" id="inputZip" ng-model="address.zip">
                     </div>
 
-                    <label for="inputZip" class="col-sm-1 control-label">City:</label>
+                    <label for="inputCity" class="col-sm-1 control-label">City:</label>
 
                     <div class="col-sm-5">
-                        <input class="form-control" ng-model="address.city">
+                        <input class="form-control" id="inputCity" ng-model="address.city">
                     </div>
                 </div>
 
