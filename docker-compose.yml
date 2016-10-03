@@ -2,7 +2,7 @@ version: "2"
 services:
   web:
     build: .
-    image: clean_arch_shop
+    image: clean_architecture_shop_symfony3client
     links:
       - mysql
       - selenium

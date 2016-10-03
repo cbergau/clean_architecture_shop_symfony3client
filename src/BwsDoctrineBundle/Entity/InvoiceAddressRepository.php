@@ -3,7 +3,7 @@
 namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\InvoiceAddress as BaseInvoiceAddress;
-use Bws\Repository\InvoiceAddressRepository as BaseInvoiceAddressRepository;
+use Bws\Repository\InvoiceAddressRepositoryInterface as BaseInvoiceAddressRepository;
 use Doctrine\ORM\EntityRepository;
 
 class InvoiceAddressRepository extends EntityRepository implements BaseInvoiceAddressRepository

@@ -3,7 +3,7 @@
 namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\EmailAddress as BaseEmailAddress;
-use Bws\Repository\EmailAddressRepository as BaseEmailAddressRepository;
+use Bws\Repository\EmailAddressRepositoryInterface as BaseEmailAddressRepository;
 use Doctrine\ORM\EntityRepository;
 
 class EmailAddressRepository extends EntityRepository implements BaseEmailAddressRepository

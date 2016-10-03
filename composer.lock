@@ -4,9 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e847f5886458c004191479b9932609d2",
-    "content-hash": "d0783d148d614dd6f3894add5184f53f",
+    "hash": "c8a298203ef158ad8c4842fa1a1dadfb",
+    "content-hash": "4056b7fa71c96784f709c3212185b76f",
     "packages": [
+        {
+            "name": "bergau/clean_architecture_shop_application",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cbergau/clean_architecture_shop_application.git",
+                "reference": "21993c1b89a84b8284a7f16e901dd320918bd6e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cbergau/clean_architecture_shop_application/zipball/21993c1b89a84b8284a7f16e901dd320918bd6e8",
+                "reference": "21993c1b89a84b8284a7f16e901dd320918bd6e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.5.5"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Bws\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Shop in Clean Architecture. In here are the business rules of the application.",
+            "time": "2016-10-03 07:22:22"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
@@ -2266,16 +2299,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.25.0",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6"
+                "reference": "81c2b5fd36581370c7731387f05dcdb577050513"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f16a634ab08d87e520da5671ec52153d627f10f6",
-                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/81c2b5fd36581370c7731387f05dcdb577050513",
+                "reference": "81c2b5fd36581370c7731387f05dcdb577050513",
                 "shasum": ""
             },
             "require": {
@@ -2288,7 +2321,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.25-dev"
+                    "dev-master": "1.26-dev"
                 }
             },
             "autoload": {
@@ -2323,7 +2356,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-09-21 23:05:12"
+            "time": "2016-10-02 16:19:13"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -2997,16 +3030,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.7",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "546898a2c0c356ef2891b39dd7d07f5d82c8ed0a"
+                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/546898a2c0c356ef2891b39dd7d07f5d82c8ed0a",
-                "reference": "546898a2c0c356ef2891b39dd7d07f5d82c8ed0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
+                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
                 "shasum": ""
             },
             "require": {
@@ -3052,7 +3085,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-09-06 16:07:45"
+            "time": "2016-09-27 03:17:40"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3728,13 +3761,12 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "bergau/clean_architecture_shop_application": 20,
         "phpunit/phpunit": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=5.5.9"
-    },
+    "platform": [],
     "platform-dev": [],
     "platform-overrides": {
         "php": "5.5.9"

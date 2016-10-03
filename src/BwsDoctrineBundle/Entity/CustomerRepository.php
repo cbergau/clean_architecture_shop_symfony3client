@@ -4,7 +4,7 @@ namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\Customer as BaseCustomer;
 use Bws\Entity\InvoiceAddress as BaseInvoiceAddress;
-use Bws\Repository\CustomerRepository as BaseCustomerRepository;
+use Bws\Repository\CustomerRepositoryInterface as BaseCustomerRepository;
 use Doctrine\ORM\EntityRepository;
 
 class CustomerRepository extends EntityRepository implements BaseCustomerRepository

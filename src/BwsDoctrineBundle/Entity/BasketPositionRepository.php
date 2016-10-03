@@ -4,7 +4,7 @@ namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\Basket as BaseBasket;
 use Bws\Entity\BasketPosition as BaseBasketPosition;
-use Bws\Repository\BasketPositionRepository as BaseBasketPositionRepository;
+use Bws\Repository\BasketPositionRepositoryInterface as BaseBasketPositionRepository;
 use Doctrine\ORM\EntityRepository;
 
 class BasketPositionRepository extends EntityRepository implements BaseBasketPositionRepository

@@ -59,7 +59,7 @@ class OrderController extends Controller
         $interactor = $this->get('interactor.submit_order');
         $response = $interactor->asRegisteredCustomer($request);
 
-        //@todo presenter and dont throw exception....
+        //@todo presenter and don't throw exception....
         switch ($response->getCode()) {
             case $response::SUCCESS:
                 $httpRequest->getSession()->set('orderId', $response->getOrderId());

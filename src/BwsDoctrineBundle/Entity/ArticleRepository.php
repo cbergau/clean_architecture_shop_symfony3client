@@ -2,7 +2,7 @@
 
 namespace BwsDoctrineBundle\Entity;
 
-use Bws\Repository\ArticleRepository as BaseArticleRepository;
+use Bws\Repository\ArticleRepositoryInterface as BaseArticleRepository;
 use Doctrine\ORM\EntityRepository;
 
 class ArticleRepository extends EntityRepository implements BaseArticleRepository

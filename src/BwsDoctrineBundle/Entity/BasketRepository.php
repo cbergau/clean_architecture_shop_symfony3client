@@ -3,7 +3,7 @@
 namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\Basket as BaseBasket;
-use Bws\Repository\BasketRepository as BaseBasketRepository;
+use Bws\Repository\BasketRepositoryInterface as BaseBasketRepository;
 use Doctrine\ORM\EntityRepository;
 
 class BasketRepository extends EntityRepository implements BaseBasketRepository

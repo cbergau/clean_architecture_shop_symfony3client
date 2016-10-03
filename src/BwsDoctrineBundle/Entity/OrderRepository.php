@@ -3,9 +3,10 @@
 namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\Order as BaseOrder;
+use Bws\Repository\OrderRepositoryInterface;
 use Doctrine\ORM\EntityRepository;
 
-class OrderRepository extends EntityRepository implements \Bws\Repository\OrderRepository
+class OrderRepository extends EntityRepository implements OrderRepositoryInterface
 {
     /**
      * @param BaseOrder $order

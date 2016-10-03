@@ -3,7 +3,7 @@
 namespace BwsDoctrineBundle\Entity;
 
 use Bws\Entity\DeliveryAddress as BaseDeliveryAddress;
-use Bws\Repository\DeliveryAddressRepository as BaseDeliveryAddressRepository;
+use Bws\Repository\DeliveryAddressRepositoryInterface as BaseDeliveryAddressRepository;
 use Doctrine\ORM\EntityRepository;
 
 class DeliveryAddressRepository extends EntityRepository implements BaseDeliveryAddressRepository
