@@ -13,19 +13,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cbergau/clean_architecture_shop_application.git",
-                "reference": "21993c1b89a84b8284a7f16e901dd320918bd6e8"
+                "reference": "48f621b8a90d705bfb3b06bbc6ca5db46455d73e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cbergau/clean_architecture_shop_application/zipball/21993c1b89a84b8284a7f16e901dd320918bd6e8",
-                "reference": "21993c1b89a84b8284a7f16e901dd320918bd6e8",
+                "url": "https://api.github.com/repos/cbergau/clean_architecture_shop_application/zipball/48f621b8a90d705bfb3b06bbc6ca5db46455d73e",
+                "reference": "48f621b8a90d705bfb3b06bbc6ca5db46455d73e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.5.5"
+                "phpunit/phpunit": "5.5.5",
+                "satooshi/php-coveralls": "dev-master"
             },
             "type": "project",
             "autoload": {
@@ -38,7 +39,7 @@
                 "MIT"
             ],
             "description": "PHP Shop in Clean Architecture. In here are the business rules of the application.",
-            "time": "2016-10-03 07:22:22"
+            "time": "2016-10-04 20:20:53"
         },
         {
             "name": "doctrine/annotations",
@@ -2159,16 +2160,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "65ca9e4fbdb34f6d463ef77898ca583b101a4162"
+                "reference": "e7e1d01fe103de78bca6fbf7f6f4acf64482d63c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/65ca9e4fbdb34f6d463ef77898ca583b101a4162",
-                "reference": "65ca9e4fbdb34f6d463ef77898ca583b101a4162",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/e7e1d01fe103de78bca6fbf7f6f4acf64482d63c",
+                "reference": "e7e1d01fe103de78bca6fbf7f6f4acf64482d63c",
                 "shasum": ""
             },
             "require": {
@@ -2181,7 +2182,7 @@
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
-                "twig/twig": "~1.23|~2.0"
+                "twig/twig": "~1.26|~2.0"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0",
@@ -2250,6 +2251,7 @@
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "phpdocumentor/reflection-docblock": "^3.0",
                 "predis/predis": "~1.0",
+                "symfony/phpunit-bridge": "~3.2",
                 "symfony/polyfill-apcu": "~1.1",
                 "symfony/security-acl": "~2.8|~3.0"
             },
@@ -2295,7 +2297,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-09-03 15:28:43"
+            "time": "2016-10-03 19:01:14"
         },
         {
             "name": "twig/twig",
@@ -2952,12 +2954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "376acc02748ad93ab2795630d7298b96313230b8"
+                "reference": "19481ae129eda8d87073ae808ce1063b766045f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/376acc02748ad93ab2795630d7298b96313230b8",
-                "reference": "376acc02748ad93ab2795630d7298b96313230b8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/19481ae129eda8d87073ae808ce1063b766045f6",
+                "reference": "19481ae129eda8d87073ae808ce1063b766045f6",
                 "shasum": ""
             },
             "require": {
@@ -3026,20 +3028,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-09-30 09:40:06"
+            "time": "2016-10-03 13:06:13"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da"
+                "reference": "03500345483e1e17b52e2e4d34a89c9408ab2902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
-                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/03500345483e1e17b52e2e4d34a89c9408ab2902",
+                "reference": "03500345483e1e17b52e2e4d34a89c9408ab2902",
                 "shasum": ""
             },
             "require": {
@@ -3085,7 +3087,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-09-27 03:17:40"
+            "time": "2016-10-04 11:03:26"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3654,7 +3656,7 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
